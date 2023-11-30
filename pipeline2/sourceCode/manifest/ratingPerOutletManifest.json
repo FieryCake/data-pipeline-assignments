@@ -1,0 +1,13 @@
+{
+    "fileLocations": [
+        {
+            "URIs": [
+                "https://assignment2-glenn.s3.amazonaws.com/visualisation/ratingPerOutlet.json"
+            ]
+        }
+    ],
+    "globalUploadSettings": {
+        "format": "JSON"
+    }
+}
+                            

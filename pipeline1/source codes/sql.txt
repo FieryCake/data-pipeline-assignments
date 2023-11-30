@@ -1,0 +1,22 @@
+================= category count=============
+SELECT category, COUNT(*) AS category_count
+FROM output
+WHERE category IS NOT NULL
+GROUP BY category
+ORDER BY category_count DESC;
+
+
+================= category sentiments=============
+SELECT category, 
+       SUM(CASE WHEN agsent = 'POSITIVE' THEN 1 ELSE 0 END) AS positive_sentiment_count,
+       SUM(CASE WHEN agsent = 'NEGATIVE' THEN 1 ELSE 0 END) AS negative_sentiment_count
+FROM sentimentclean
+GROUP BY category;
+
+
+
+================= engagement Author=============
+select authors, sum(comment)
+from scrapedclean
+group by authors
+order by sum(comment) desc
